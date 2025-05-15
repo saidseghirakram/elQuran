@@ -24,8 +24,8 @@ A modern, interactive Quran reading application that provides an enriching exper
 
 1. Clone the repository:
 ```bash
-git clone <your-repository-url>
-cd emerald-quran-reader
+git clone https://github.com/saidseghirakram/elQuran.git
+cd elQuran
 ```
 
 2. Install dependencies:
