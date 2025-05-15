@@ -1,6 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { API_ENDPOINTS } from '@/config/api';
 
 interface Surah {
   number: number;
@@ -43,7 +43,7 @@ export const useSurahs = () => {
   return useQuery({
     queryKey: ['surahs'],
     queryFn: async () => {
-      const response = await fetch('https://api.alquran.cloud/v1/surah');
+      const response = await fetch(API_ENDPOINTS.getAllSurahs());
       const data = await response.json();
       
       if (data.code !== 200) {
@@ -60,7 +60,7 @@ export const useSurah = (surahNumber: number) => {
   return useQuery({
     queryKey: ['surah', surahNumber],
     queryFn: async () => {
-      const response = await fetch(`https://api.alquran.cloud/v1/surah/${surahNumber}`);
+      const response = await fetch(API_ENDPOINTS.getSurah(surahNumber));
       const data = await response.json();
       
       if (data.code !== 200) {
@@ -74,11 +74,11 @@ export const useSurah = (surahNumber: number) => {
 };
 
 // Fetch audio recitation for a surah
-export const useSurahRecitation = (surahNumber: number, reciter: string = 'ar.alafasy') => {
+export const useSurahRecitation = (surahNumber: number, reciter?: string) => {
   return useQuery({
     queryKey: ['recitation', surahNumber, reciter],
     queryFn: async () => {
-      const response = await fetch(`https://api.alquran.cloud/v1/surah/${surahNumber}/${reciter}`);
+      const response = await fetch(API_ENDPOINTS.getSurahRecitation(surahNumber, reciter));
       const data = await response.json();
       
       if (data.code !== 200) {
@@ -92,14 +92,11 @@ export const useSurahRecitation = (surahNumber: number, reciter: string = 'ar.al
 };
 
 // Fetch translation for a surah
-export const useSurahTranslation = (
-  surahNumber: number, 
-  translation: string = 'en.asad'
-) => {
+export const useSurahTranslation = (surahNumber: number, translation?: string) => {
   return useQuery({
     queryKey: ['translation', surahNumber, translation],
     queryFn: async () => {
-      const response = await fetch(`https://api.alquran.cloud/v1/surah/${surahNumber}/${translation}`);
+      const response = await fetch(API_ENDPOINTS.getSurahTranslation(surahNumber, translation));
       const data = await response.json();
       
       if (data.code !== 200) {

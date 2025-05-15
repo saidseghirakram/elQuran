@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="248" fill="#10B981" stroke="#064E3B" stroke-width="16"/>
+  
+  <!-- Quran book shape -->
+  <path d="M156 126C156 114.954 164.954 106 176 106H336C347.046 106 356 114.954 356 126V386C356 397.046 347.046 406 336 406H176C164.954 406 156 397.046 156 386V126Z" fill="white"/>
+  
+  <!-- Book spine details -->
+  <rect x="146" y="116" width="20" height="280" rx="10" fill="#064E3B"/>
+  
+  <!-- Decorative lines -->
+  <path d="M186 146H326" stroke="#064E3B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M186 186H326" stroke="#064E3B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M186 226H326" stroke="#064E3B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M186 266H326" stroke="#064E3B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M186 306H326" stroke="#064E3B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M186 346H326" stroke="#064E3B" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Arabic word for Quran -->
+  <path d="M256 176C256 176 276 196 296 196M216 196C236 196 256 176 256 176M256 176C256 176 266 186 276 186" stroke="#10B981" stroke-width="12" stroke-linecap="round"/>
+</svg> 
